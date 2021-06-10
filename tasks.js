@@ -48,6 +48,9 @@ function onDataReceived(text) {
   else if(text.startsWith("list")){
     tasks(list);
   }
+  else if(text.startsWith("add")){
+      add(text);
+  }
   else{
     unknownCommand(text);
   }
@@ -95,6 +98,11 @@ function tasks(list){
   for(var i = 0; i < list.length; i++){
     console.log(i + 1 + ") " + list[i]);
   }
+}
+
+function add(text){
+  text = text.trim();
+  list.push(text.substring(4).trim());
 }
 
 /**
