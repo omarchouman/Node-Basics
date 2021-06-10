@@ -39,7 +39,7 @@ function onDataReceived(text) {
   if (text === 'quit\n' || text === 'exit\n') {
     quit();
   }
-  else if(text === "hello\n" || text.startsWith("hello ") || text.startsWith("hello\t")){
+  else if(text === "hello\n" || text.startsWith("hello") || text.startsWith("hello\t")){
     hello(text);
   }
   else if(text === "help\n"){
@@ -56,6 +56,12 @@ function onDataReceived(text) {
   }
   else if(text.startsWith("edit")){
     edit(text);
+  }
+  else if(text.startsWith("check")){
+    check(text);
+  }
+  else if(text.startsWith("uncheck")){
+    uncheck(text);
   }
   else{
     unknownCommand(text);
@@ -96,6 +102,11 @@ function help(){
   console.log("--- All Commands ---\n");
   console.log("hello - prints hello and greets you\n");
   console.log("list - lists all the possible commands that you can use\n");
+  console.log("add - adds new task\n");
+  console.log("remove - removes a certain task\n");
+  console.log("edit - edits the tasks");
+  console.log("check - marks the task as done\n");
+  console.log("uncheck - demarks the task so it becomes undone");
   console.log("exit or quit - quits the application\n");
 }
 
@@ -138,7 +149,11 @@ function remove(text){
 }
 }
 
-
+/**
+ * Edits the task
+ *
+ * @returns {void}
+ */
 function edit(c){
   c = c.replace("\n","");
   c=  c.split(" ");
@@ -170,6 +185,25 @@ function edit(c){
   }
 }
 
+/**
+ * marks as done
+ *
+ * @returns {void}
+ */
+function check(text){
+  text = text.split(" ");
+  list[text[1]-1][0] = '✓';
+}
+
+/**
+ * demarks the task
+ *
+ * @returns {void}
+ */
+function uncheck(text){
+  text = text.split(" ");
+  list[text[1]-1][0] = '';
+}
 
 /**
  * Exits the application
