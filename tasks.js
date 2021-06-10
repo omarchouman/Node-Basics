@@ -96,18 +96,32 @@ function help(){
   console.log("exit or quit - quits the application\n");
 }
 
-
+/**
+ * Lists the user's tasks
+ *
+ * @returns {void}
+ */
 function tasks(list){
   for(var i = 0; i < list.length; i++){
     console.log(i + 1 + ") " + list[i]);
   }
 }
 
+/**
+ * Adds a new task
+ *
+ * @returns {void}
+ */
 function add(text){
   text = text.trim();
   list.push(text.substring(4).trim());
 }
 
+/**
+ * Removes an existing task
+ *
+ * @returns {void}
+ */
 function remove(text){
   text = text.trim();
   if(text.length == 6){
