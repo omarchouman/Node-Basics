@@ -18,7 +18,7 @@ function startApp(name){
 }
 
 
-var list = ["buy batata", "buy orange"];
+var list = [['','1'],['✓','2'],['','3']];
 
 /**
  * Decides what to do depending on the data that was received
@@ -106,7 +106,7 @@ function help(){
  */
 function tasks(list){
   for(var i = 0; i < list.length; i++){
-    console.log(i + 1 + ") " + list[i]);
+    console.log(list[i]);
   }
 }
 
@@ -144,8 +144,9 @@ function edit(c){
   c=  c.split(" ");
 
   for(var i = 0;i<c[1].length;i++){
-    if(c[1][i]<"0" || c[1][i]>"9")
-    break;
+    if(c[1][i]<"0" || c[1][i]>"9"){
+      break;
+    }
   }
   var str="";
   if(i==c[1].length){
