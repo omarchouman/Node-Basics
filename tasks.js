@@ -70,7 +70,11 @@ function hello(){
   console.log('hello!')
 }
 
-
+/**
+ * Lists all the possible commands that are valid inside the app
+ *
+ * @returns {void}
+ */
 function help(){
   console.log("\n");
   console.log("--- All Commands ---\n");
