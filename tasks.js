@@ -62,7 +62,7 @@ function unknownCommand(c){
 
 
 /**
- * Says hello
+ * says hello and your name if you type it otherwise it says only hello
  *
  * @returns {void}
  */
