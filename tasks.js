@@ -18,6 +18,8 @@ function startApp(name){
 }
 
 
+var list = ["buy batata", "buy orange"];
+
 /**
  * Decides what to do depending on the data that was received
  * This function receives the input sent by the user.
@@ -37,11 +39,14 @@ function onDataReceived(text) {
   if (text === 'quit\n' || text === 'exit\n') {
     quit();
   }
-  else if(text === 'hello\n' || text.startsWith("hello ") || text.startsWith("hello\t")){
+  else if(text === "hello\n" || text.startsWith("hello ") || text.startsWith("hello\t")){
     hello(text);
   }
-  else if(text === 'help\n'){
+  else if(text === "help\n"){
     help()
+  }
+  else if(text.startsWith("list")){
+    tasks(list);
   }
   else{
     unknownCommand(text);
@@ -85,6 +90,12 @@ function help(){
   console.log("exit or quit - quits the application\n");
 }
 
+
+function tasks(list){
+  for(var i = 0; i < list.length; i++){
+    console.log(i + 1 + ") " + list[i]);
+  }
+}
 
 /**
  * Exits the application
