@@ -51,6 +51,9 @@ function onDataReceived(text) {
   else if(text.startsWith("add")){
       add(text);
   }
+  else if(text === 'remove\n' || text.startsWith("remove")){
+    remove(text);
+  }
   else{
     unknownCommand(text);
   }
@@ -103,6 +106,19 @@ function tasks(list){
 function add(text){
   text = text.trim();
   list.push(text.substring(4).trim());
+}
+
+function remove(text){
+  text = text.trim();
+  if(text.length == 6){
+    list.pop();
+  }
+  else if(text.substring(7) >=list.length || text.substring(7)<0){
+    console.log("task number doesn't exist");
+  }
+  else{
+  list.splice(text.substring(7),1);
+}
 }
 
 /**
