@@ -1,0 +1,12 @@
+{
+	"list": [
+		{
+			"name" : "buy batata",
+			"checked" : false
+		},
+		{
+			"name" : "buy hummus",
+			"checked" : true
+		}
+	]
+}

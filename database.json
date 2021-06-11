@@ -1,0 +1,16 @@
+{
+    "list": [
+        {
+            "name" : "list1",
+            "checked" : true
+        },
+        {
+            "name" : "list2",
+            "checked" : false
+        },
+        {
+            "name" : "list3",
+            "checked" : true
+        }
+    ]
+}
